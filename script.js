@@ -1,90 +1,23 @@
-let h= document.querySelector('h1');
-let btn= document.querySelector('button');
-let main = document.querySelector('main');
+let main = document.querySelector('main')
+let btn = document.querySelector('button')
 
-let ipl=[
-    {
-        team:'CSK',
-        primary:'yellow',
-        sec:'blue',
-        fullName:'Chennai Super Kings',
-        trophies:5,
-        captain:'MSD'
-    },
-    {
-        team:'DC',
-        primary:'blue',
-        sec:'red',
-        fullName:'Delhi Capitals',
-        trophies:0,
-        captain:'Rishabh Pant'
-    },
-    {
-        team:'GT',
-        primary:'darkblue',
-        sec:'white',
-        fullName:'Gujrat Titans',
-        trophies:1,
-        captain:'MSD'
-    },
-    {
-        team:'SRH',
-        primary:'orange',
-        sec:'red',
-        fullName:'Sunrisers Hydrabad',
-        trophies:1,
-        captain:'mr a'
-    },
-    {
-        team:'RCB',
-        primary:'red',
-        sec:'gold',
-        fullName:'Royal Challengers Bangalore',
-        trophies:1,
-        captain:'Virat Kohli'
-    },
-    {
-        team:'KKR',
-        primary:'purple',
-        sec:'gold',
-        fullName:'Kolkata Knight Riders',
-        trophies:3,
-        captain:'mr b'
-    },
-    {
-        team:'MI',
-        primary:'blue',
-        sec:'white',
-        fullName:'Mumbai Indians',
-        trophies:5,
-        captain:'Hardik Pandya'
-    },
-    {
-        team:'PKBS',
-        primary:'red',
-        sec:'silver',
-        fullName:'Punjab Kings',
-        trophies:0,
-        captain:'mr c'
-    },
-    {
-        team:'RR',
-        primary:'pink',
-        sec:'white',
-        fullName:'Rajasthan Royals',
-        trophies:0,
-        captain:'Sanju Sampson'
-    }
-]
 btn.addEventListener('click',function (){
-    let a = Math.floor(Math.random()*ipl.length);
-    let team= ipl[a].team;
-    let primary=ipl[a].primary;
-    let sec=ipl[a].sec;
-    let fullName=ipl[a].fullName;
-    let trophies=ipl[a].trophies;
-    let captain =ipl[a].captain;
-    h.innerHTML=`${team}`+"</br>"+`${captain}`+"</br>"+`${fullName}`+"</br>"+`${trophies}`
-    main.style.backgroundColor=`${primary}`
-    h.style.backgroundColor = `${sec}`
+    let div = document.createElement('div');
+    
+    let x = Math.random()*90 
+    let y = Math.random()*90
+    let s = Math.random()*3
+    let r= Math.random()*360
+    let c1 =Math.floor(Math.random()*256)
+    let c2 =Math.floor(Math.random()*256)
+    let c3 =Math.floor(Math.random()*256)
+    div.style.width="50px"
+    div.style.height="50px"
+    div.style.position="absolute"
+    div.style.backgroundColor="rgb("+c1+","+c2+","+c3+")"
+    div.style.left=x+"%"
+    div.style.top=y+"%"
+    div.style.rotate=r+"deg"
+    
+    main.appendChild(div)
 })
