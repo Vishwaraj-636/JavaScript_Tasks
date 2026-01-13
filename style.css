@@ -26,7 +26,16 @@ body,html{
     cursor: pointer;
     user-select: none;
     position: relative;
+    transition: transform 0.05s ease;
+    background:0.05s ease;
 }
+.piano-key .keys-white.active,
+.piano-key .keys-black.active {
+    transform: scale(0.97);
+    background-color: #bbb;
+}
+
+
 .piano-key .keys-black{
     display: flex;
     align-items: flex-end;
